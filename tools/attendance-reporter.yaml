@@ -1,0 +1,17 @@
+name: attendance-reporter
+description: Compile structured attendance summaries and compliance reports.
+input_schema:
+  type: object
+  properties:
+    class_name:
+      type: string
+      description: Name or code of the academic course.
+    date_range:
+      type: string
+      description: Reporting period interval.
+    summary_data:
+      type: object
+      description: Aggregated attendance counts and rates.
+  required:
+    - class_name
+    - summary_data

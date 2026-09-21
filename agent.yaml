@@ -1,0 +1,63 @@
+spec_version: "0.1.0"
+name: "attendance-register-agent"
+version: "1.0.0"
+description: >
+  Autonomous classroom attendance register and intelligence agent powered by Google Gemini.
+  Audits student rosters, validates QR check-in streams, detects chronic absenteeism patterns,
+  and answers teacher administrative queries grounded strictly in session snapshots.
+author: "Chithra R"
+license: "MIT"
+
+model:
+  preferred: "gemini-2.0-flash"
+  fallback:
+    - "gpt-4o"
+    - "claude-3-5-sonnet"
+  constraints:
+    temperature: 0.2
+    max_tokens: 4096
+
+skills:
+  - attendance-roster-auditor
+  - absenteeism-detector
+  - qr-checkin-validator
+  - classroom-analytics-reporter
+
+tools:
+  - roster-auditor
+  - absenteeism-calculator
+  - qr-validator
+  - attendance-reporter
+
+runtime:
+  max_turns: 10
+  temperature: 0.2
+  timeout: 120
+
+compliance:
+  risk_tier: standard
+  frameworks:
+    - ferpa
+    - gdpr
+  data_governance:
+    pii_handling: redact
+    data_classification: internal
+  recordkeeping:
+    audit_logging: true
+    log_format: structured_json
+  supervision:
+    human_in_the_loop: conditional
+    override_capability: true
+    kill_switch: true
+
+tags:
+  - education
+  - attendance
+  - roster-management
+  - classroom-analytics
+  - ferpa-compliance
+  - qr-checkin
+
+metadata:
+  domain: "education"
+  category: "Education"

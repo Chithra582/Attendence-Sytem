@@ -1,0 +1,17 @@
+name: absenteeism-calculator
+description: Calculate individual student attendance percentages and detect chronic absenteeism risk.
+input_schema:
+  type: object
+  properties:
+    sessions_attended:
+      type: integer
+      description: Total sessions attended by the student.
+    total_sessions:
+      type: integer
+      description: Total eligible class sessions held.
+    unexcused_streak:
+      type: integer
+      description: Current consecutive unexcused absence count.
+  required:
+    - sessions_attended
+    - total_sessions

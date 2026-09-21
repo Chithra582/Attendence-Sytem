@@ -1,0 +1,15 @@
+name: roster-auditor
+description: Audit and tally student attendance status records from classroom snapshots.
+input_schema:
+  type: object
+  properties:
+    roster:
+      type: array
+      items:
+        type: object
+      description: List of student records with attendance statuses.
+    session_id:
+      type: string
+      description: Identifier for the class session being audited.
+  required:
+    - roster
