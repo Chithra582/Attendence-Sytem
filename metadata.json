@@ -1,0 +1,7 @@
+{
+  "name": "Attendance Register",
+  "description": "Classroom attendance register with instant check-in, roster management, QR code check-in, and an AI assistant for attendance queries.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
